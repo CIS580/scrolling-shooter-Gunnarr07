@@ -486,7 +486,6 @@ Missile.prototype.render = function(elapsedTime, ctx) {
   // Draw Smoke
   this.smokeParticles.render(elapsedTime, ctx);
 }
-
 },{"./smoke_particles":7,"./vector":8}],6:[function(require,module,exports){
 "use strict";
 

@@ -6,6 +6,8 @@ const Vector = require('./vector');
 const Camera = require('./camera');
 const Player = require('./player');
 const BulletPool = require('./bullet_pool');
+const Tilemap = require('./tilemap');
+
 
 
 /* Global variables */
@@ -21,6 +23,8 @@ var camera = new Camera(canvas);
 var bullets = new BulletPool(10);
 var missiles = [];
 var player = new Player(bullets, missiles);
+var tilemapBackground = require('../tilemaps/background.json');
+var background = new Tilemap(tilemapBackground);
 
 /**
  * @function onkeydown
@@ -138,6 +142,7 @@ function render(elapsedTime, ctx) {
   ctx.fillRect(0, 0, 1024, 786);
 
   // TODO: Render background
+  background.render(ctx);
 
   // Transform the coordinate system using
   // the camera position BEFORE rendering
